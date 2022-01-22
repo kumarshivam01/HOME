@@ -113,7 +113,7 @@ a:hover{
             </div>
         </div>
         <div class="thirdrow">
-                <h3>Card Number</h3>
+                <h3>EXPIRY DATE</h3>
                 <div class="selection">
                     <div class="date">
                         <select name="months" id="months">
@@ -174,13 +174,17 @@ a:hover{
         // {
         //     alert("Please fill CVV")
         // }
-        if((fullname!="") && (cvv!="") && (cardnumber!="")){
+        if((fullname!="") && (cvv!="") && (cardnumber!=""))
+        {
             
             
             window.location.href="otp.html"
+            alert("Otp is send to your Regestered mobile number")
         }
         else{
             alert("Please fill all Data")
+            
+            
         }
     }
 </script>
