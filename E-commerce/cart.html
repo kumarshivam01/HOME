@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin-left: 60px;
+        }
+        img{
+            width: 250px;
+            height: 250px;
+            border-radius: 20px;
+        }
+        #container{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+        }
+        #flex{
+            display: flex;
+            justify-content: space-around;
+            margin-left: -80px;
+        }
+        button{
+            background-color: blue;
+            color: white;
+            padding: 8px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+        }
+        h1{
+            text-align: center;
+        }
+        input{
+            padding: 6px;
+            font-size: 20px;
+        }
+        buynow{
+            background-color: orangered;
+            width: 100px;
+            text-align: center;
+            padding: 5px;
+            font-size: 22px;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cart Items</h1>
+    <h2></h2>
+    <h2 id="totalitem"></h2>
+    <input type="text" placeholder="Enter Your Code">
+    <button>Apply Promocode</button>
+    <div>
+        <a href="payment.html">
+          <button id="buynow">Buy Now</button>
+        </a>  
+      </div>  
+    <div id="container"></div>
+</body>
+</html>
+<script>
+     var cartarr = JSON.parse(localStorage.getItem("cartItems"));
+    console.log(cartarr)
+    cartarr.map(function(data){
+            var div = document.createElement("div")
+            var image = document.createElement("img")
+            image.setAttribute("src",data.image_url)
+            var name = document.createElement("p");
+            name.textContent=data.name;
+            var div2 = document.createElement("div");
+            div2.setAttribute("id","flex")
+            var p1 = document.createElement("p")
+            p1.textContent=data.price;
+            var p2 = document.createElement("p")
+            p2.textContent=data.strikedoffprice
+            p2.style.textDecoration = "line-through"
+            
+            div2.append(p1,p2)
+            div.append(image,name,div2);
+            document.querySelector("#container").append(div)
+    })
+    var total=cartarr.reduce(function(acc,cv){
+        return acc+Number(cv.price)
+    },0)
+
+    
+    
+    document.querySelector("h2").textContent= `Total Amount is ${total}`
+    console.log(total)
+    document.querySelector("#totalitem").textContent=`Total Item is ${cartarr.length}`
+    
+    
+    
+</script>

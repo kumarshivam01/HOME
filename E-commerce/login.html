@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            padding: 10px;
+            margin-top: 20px;
+            margin-left: 520px;
+            width: 300px;
+            background-color: black;
+            color: white;
+            font-size: 20px;
+        }
+        .submit{
+            margin-left: 533px;
+            background-color: blue;
+            border: none;
+            border-radius: 10px;
+        }
+        h1{
+            font-size: 50px;
+            text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>login Page</h1>  
+           <form>
+               <input class="user" type="text" placeholder="Enter Username">
+               <input class="pass" type="password" placeholder="Enter Password">
+               <input class="submit" type="Submit" placeholder="Login">
+           </form>
+</body>
+</html>
+<script>
+    document.querySelector("form").addEventListener("submit", signin);
+    var regduser = JSON.parse(localStorage.getItem("userdatabase"));
+    
+    function signin(event){
+        event.preventDefault();
+        var user = document.querySelector(".user").value;
+        var pass = document.querySelector(".pass").value;
+
+        for(var i=0; i<regduser.length; i++){
+            console.log(regduser[i].username , regduser[i].password);
+            if(regduser[i].username==user && regduser[i].password==pass){
+                window.location.href="home.html"
+                alert("Login Sucessfully")
+                   
+            }
+           else{
+                alert("Wrong Username & Password")
+            }
+        }
+    }
+</script>

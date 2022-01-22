@@ -377,6 +377,7 @@
     </style>
 </head>
 <body>
+  <div id="full-nav">
   <div id="hidden-nav-id" class="hidden-nav-c" style="z-index:10; position: fixed;"></div>
     <div class="totalnav" style="z-index:10;">
     <div id="upper-nav">
@@ -410,7 +411,7 @@
         </div>
         <div class="cart-login-icon">
                 <div>
-                     <p id="cart" style="color: rgb(0,175,239);"><i class="fas fa-shopping-cart"></i>Cart</p>
+                     <p id="cart" style="color: rgb(0,175,239);"><i class="fas fa-shopping-cart"></i><a href="cart.html">Cart</a></p>
                 </div>
 
                 <div class="container">
@@ -435,11 +436,12 @@
                 </div>
         </div>
     </div>
+    <hr id="hr-line">
         
     <div id="lower-div">
             <nav class="nav-bar">
                 <ul>
-                    <li> HOME</li>
+                    <li > <a href="index.html">HOME</a></li>
                     <li>BABY
                         <div class="mega-menu">
                             <div class="inner-mega-menu">
@@ -458,7 +460,7 @@
                                 <p>Baby Bath</p>
                             </div>
                             <div class="inner-mega-menu">
-                                <p><h3 style="color: blue;">See All</h3></p>
+                                <p><h3 style="color: rgb(0,175,239);">See All</h3></p>
                                 
                             </div>
                         </div>
@@ -480,7 +482,7 @@
                                 
                             </div>
                             <div class="inner-mega-menu">
-                                <p><h3 style="color: blue;">See All</h3></p>
+                                <p><h3 style="color: rgb(0,175,239);">See All</h3></p>
                                 
                             </div>
                         </div>
@@ -504,7 +506,7 @@
                                 
                             </div>
                             <div class="inner-mega-menu">
-                                <p><h3 style="color: blue;">See All</h3></p>
+                                <p><h3 style="color: rgb(0,175,239);">See All</h3></p>
                                 
                             </div>
                         </div>
@@ -529,7 +531,7 @@
                                 
                             </div>
                             <div class="inner-mega-menu">
-                                <p><h3 style="color: blue;">See All</h3></p>
+                                <p><h3 style="color: rgb(0,175,239);">See All</h3></p>
                                 
                             </div>
                         </div>
@@ -552,19 +554,20 @@
                                 
                             </div>
                             <div class="inner-mega-menu">
-                                <p><h3 style="color: blue;">See All</h3></p>
+                                <p><h3 style="color: rgb(0,175,239);">See All</h3></p>
                                 
                             </div>
                         </div>
                     </li>
-                     <li>GIFT</li>
-                    <li>ALL</li>
-                    <li>BLOG</li>
+                     <li >GIFT</li>
+                    <li class="div-a"> <a href="Allproducts.html">ALL </a> </li>
+                    <li class="div-a"><a href="all_blog.html">BLOG</a></li>
                     <li>PLANT</li>
                     <li>STORE</li>
                 </ul>
             </nav>
             <div class="header-banner"></div>
+    </div>
     </div>
        
    <!-- <div class="cart">
@@ -868,7 +871,10 @@
 
 </html>
 <script src="nav.js"></script>
+<!-- /**********************************sachin****************************** -->
 <script>
+  var cartarr = JSON.parse(localStorage.getItem("cartArr"))||[];
+  
     var div1 = document.createElement("div");
     div1.setAttribute("id", "flex2");
   
@@ -878,10 +884,20 @@
     para.textContent =
       "Explore best-selling safe, natural, and 100% toxin-free baby and beauty products from Mamaearth. Get amazing deals and start your toxin-free skin, hair, and baby care journey.";
     var click = document.createElement("button");
+        click.addEventListener("click",function(){
+          addtocart(ele)
+        })
+        function addtocart(ele){
+          cartarr.push(ele)
+          
+          localStorage.setItem("cartArr",JSON.stringify(cartarr))
+        }
+        console.log(cartarr)
     click.textContent = "View All";
     div1.append(head, para, click);
   
     document.querySelector("#container").append(div1);
+    
     var data = [
       {
         icon: "BEST SELLER",
