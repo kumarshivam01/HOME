@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            padding: 10px;
+            margin-top: 20px;
+            margin-left: 520px;
+            width: 300px;
+            background-color: black;
+            color: white;
+            font-size: 20px;
+        }
+        .submit{
+            margin-left: 533px;
+            background-color: blue;
+            border: none;
+            border-radius: 10px;
+        }
+        h1{
+            font-size: 50px;
+            text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Sign Up Page</h1>
+    <form>
+        <input class="email" type="text" placeholder="Enter email adress"><br>
+        <input class="pass" type="password" placeholder="Enter password"><br>
+        <input class="user" type="text" placeholder="Enter Username"><br>
+        <input class="mob" type="number" placeholder="Enter Mob.No"><br>
+        <input class="submit" type="submit" value="Sign Up">
+    </form>
+</body>
+</html>
+<script>
+    document.querySelector("form").addEventListener("submit", formsubmit)
+    var userStack = JSON.parse(localStorage.getItem("userdatabase")) || [];
+    function formsubmit(event){
+        event.preventDefault();
+        var email = document.querySelector(".email").value;
+        var pass = document.querySelector(".pass").value;
+        var user = document.querySelector(".user").value;
+        var mob = document.querySelector(".mob").value;
+        var userdata = {
+            emailadd: email,
+            password: pass,
+            username: user,
+            mobno:mob,
+        };
+        userStack.push(userdata)
+        
+        // console.log(userStack);
+        localStorage.setItem("userdatabase",JSON.stringify(userStack));
+        alert("Sign Up Sucessfully")
+        window.location.href="login.html"
+    }
+</script>
