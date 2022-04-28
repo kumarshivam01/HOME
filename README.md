@@ -22,6 +22,8 @@
 <li>Payment Page</li>
 <li>Google fonts</li>
 <br>
+
+
 <h2>Team Members</h2>
 <li>Kumar shivam <a href="https://github.com/kumarshivam01">https://github.com/kumarshivam01</a></li>
 
@@ -34,3 +36,9 @@
 <li>Pranjal Bhaskar <a href="https://github.com/pranjalbhaskar-27">https://github.com/pranjalbhaskar-27</a></li>
 
 <li>Aarti lathar <a href="https://github.com/aarti-lather">https://github.com/aarti-lather</a></li>
+<h2>Some screenshot of project</h2>
+<img style="width: 1000px; height: 400px;" src="https://user-images.githubusercontent.com/98182315/165702247-fb59576c-a6e3-42aa-a49c-56f539e91139.png"/>
+<img style="width: 1000px; height: 400px;" src="https://user-images.githubusercontent.com/98182315/165702684-2d8e22f2-2b41-4945-ba8a-06598c5a8dfe.png"/>
+<img style="width: 1000px; height: 400px;" src="https://user-images.githubusercontent.com/98182315/165703275-0b926cb4-ef4a-47d5-b5b8-7f0ee6c25f4e.png"/>
+<img style="width: 1000px; height: 400px;" src="https://user-images.githubusercontent.com/98182315/165703443-7d71d0a8-e782-4591-a347-0689a4be27da.png"/>
+<img style="width: 1000px; height: 400px;" src="https://user-images.githubusercontent.com/98182315/165703576-8d25a2fd-2997-4879-ba2c-0401dc2457d6.png"/>
